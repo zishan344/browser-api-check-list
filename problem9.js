@@ -3,13 +3,24 @@ console.log(procuctName, procuctPrice);
 */
 
 //id {procuct-name procuct-price }
+const showing = () => {
+  const totlaPrduct = localCart();
+  const ul = document.getElementById("ul");
+  ul.textContent = "";
+  for (const total in totlaPrduct) {
+    const li = document.createElement("li");
+    li.innerText = total + " " + totlaPrduct[total];
+    ul.appendChild(li);
+  }
+};
 const addedProduct = () => {
   const procuctName = idgenerator("procuct-name");
   const procuctPrice = idgenerator("procuct-price");
-  console.log(procuctName);
-  console.log(procuctPrice);
+
   //  added the cart
   addCart(procuctName, procuctPrice);
+  showing();
+  // show the ui
 
   // clear the input
 };
@@ -34,10 +45,13 @@ const localCart = () => {
 const addCart = (name, price) => {
   const cart = localCart();
   if (cart[name]) {
-    cart[name] = parseFloat(price) + parseFloat(price);
+    cart[name] = parseFloat(cart[name]) + parseFloat(price);
+    console.log(cart[name]);
   } else {
     cart[name] = price;
   }
   const str = JSON.stringify(cart);
   localStorage.setItem("cart", str);
 };
+
+showing();
