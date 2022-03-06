@@ -1,0 +1,37 @@
+<!-- ৯. একটা সিম্পল ওয়েবসাইট বানাও। সেখানে দুইটা ইনপুট ফিল্ড থাকবে। একটা ফিল্ডে লিখবে প্রোডাক্ট এর নাম। আর সেকেন্ড ইনপুট ফিল্ডে থাকবে প্রোডাক্ট এর প্রাইস। তারপর একটা বাটন থাকবে। সেই বাটনে চাপ দিলে। প্রোডাক্ট এর নাম আর দাম ব্রাউজারের লোকাল স্টোরেজে সেইভ হয়ে যাবে। এবং চাইলে একাধিক প্রোডাক্ট এবং সেটার দাম লোকাল স্টোরেজে সেইভ করতে পারবে।  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shoping cart</title>
+    <style>
+      .product {
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      product name:
+      <input
+        class="product"
+        id="procuct-name"
+        type="text"
+        placeholder="enter your product name"
+      />
+    </p>
+    <p>
+      product price :
+      <input
+        class="product"
+        id="procuct-price"
+        type="text"
+        placeholder="Enter the prouct price"
+      />
+    </p>
+    <button onclick="addedProduct()">add cart</button>
+    <script src="../problem9.js"></script>
+  </body>
+</html>
